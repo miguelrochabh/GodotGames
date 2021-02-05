@@ -1,1 +1,1 @@
-*.PHP linguist-detectable
+*.PHP linguist-detectable=false
