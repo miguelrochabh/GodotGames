@@ -1,1 +1,1 @@
-*.PHP linguist-language=GDScript
+*.PHP linguist-detectable=false
