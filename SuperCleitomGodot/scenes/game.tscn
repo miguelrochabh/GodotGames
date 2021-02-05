@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=1]
+[gd_scene load_steps=77 format=1]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://assets/checkpoint2.png" type="Texture" id=2]
@@ -171,7 +171,7 @@ tracks/0/keys = {
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 0, 0, 0, 0, -3.69974, -22.2041, 0, 0, 0, 0, 335.453, -22.2041 )
+"points": Vector2Array( 0, 0, 0, 0, -3.69974, -22.2041, 0, 0, 0, 0, 523.631, -900.205 )
 }
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
@@ -208,65 +208,30 @@ points = Vector2Array( 102.692, -32.9761, 100.538, -34.3611, 102, -33.7455 )
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 0, 0, 0, 0, 2.32965, -31.2482, 0, 0, 0, 0, -335.316, -31.2482 )
-}
-
-[sub_resource type="Curve2D" id=27]
-
-bake_interval = 5.0
-_data = {
-"points": Vector2Array( 0, 0, 0, 0, -4.34387, -48.1843, 0, 0, 0, 0, 352.373, -48.1843 )
-}
-
-[sub_resource type="Curve2D" id=28]
-
-bake_interval = 5.0
-_data = {
-"points": Vector2Array( 0, 0, 0, 0, -2.0719, -64.0888, 0, 0, 0, 0, -351.972, -64.0888 )
-}
-
-[sub_resource type="Curve2D" id=29]
-
-bake_interval = 5.0
-_data = {
-"points": Vector2Array( 0, 0, 0, 0, -2.0343, -76.1496, 0, 0, 0, 0, 357.569, -76.1496 )
-}
-
-[sub_resource type="Curve2D" id=30]
-
-bake_interval = 5.0
-_data = {
-"points": Vector2Array( 0, 0, 0, 0, 5.00696, -88.3145, 0, 0, 0, 0, -357.631, -88.3145 )
-}
-
-[sub_resource type="Curve2D" id=31]
-
-bake_interval = 5.0
-_data = {
 "points": Vector2Array( 0, 0, 0, 0, 3.8255, -100.609, 0, 0, 0, 0, 288.775, -100.68 )
 }
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=27]
 
 custom_solver_bias = 0.0
 extents = Vector2( 31.4945, 34.1315 )
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=28]
 
 custom_solver_bias = 0.0
 extents = Vector2( 50.5488, 22.9719 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=29]
 
 custom_solver_bias = 0.0
 extents = Vector2( 47.3652, 24.5789 )
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=30]
 
 custom_solver_bias = 0.0
 extents = Vector2( 141.151, 118.828 )
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=31]
 
 custom_solver_bias = 0.0
 extents = Vector2( 178.475, 25.4933 )
@@ -759,7 +724,7 @@ script/script = ExtResource( 8 )
 transform/scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 4 )
 animation = "default"
-frame = 1
+frame = 3
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="personagem"]
@@ -2205,11 +2170,8 @@ stream/buffering_ms = 500
 
 [node name="plataformas" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="platMovel" type="Path2D" parent="plataformas"]
 
-editor/display_folded = true
 transform/pos = Vector2( 3320.75, 560.136 )
 curve = SubResource( 19 )
 
@@ -2271,394 +2233,10 @@ polygon = Vector2Array( -98.1145, -34.3691, 98.2712, -34.3691, 100.538, -34.3611
 shape_range = Vector2( 0, 5 )
 trigger = false
 
-[node name="platMovel1" type="Path2D" parent="plataformas"]
-
-editor/display_folded = true
-transform/pos = Vector2( 3566.45, 446.964 )
-curve = SubResource( 26 )
-
-[node name="follow" type="PathFollow2D" parent="plataformas/platMovel1"]
-
-transform/pos = Vector2( 2.32965, -31.2482 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="body" type="KinematicBody2D" parent="plataformas/platMovel1/follow"]
-
-input/pickable = false
-shapes/0/shape = SubResource( 20 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-shapes/1/shape = SubResource( 21 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 22 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 23 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/3/trigger = false
-shapes/4/shape = SubResource( 24 )
-shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/4/trigger = false
-shapes/5/shape = SubResource( 25 )
-shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/5/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-script/script = ExtResource( 30 )
-
-[node name="Sprite" type="Sprite" parent="plataformas/platMovel1/follow/body"]
-
-transform/pos = Vector2( -70, 0 )
-texture = ExtResource( 31 )
-
-[node name="Sprite1" type="Sprite" parent="plataformas/platMovel1/follow/body"]
-
-texture = ExtResource( 32 )
-
-[node name="Sprite2" type="Sprite" parent="plataformas/platMovel1/follow/body"]
-
-transform/pos = Vector2( 70, 0 )
-texture = ExtResource( 33 )
-
-[node name="polygon" type="CollisionPolygon2D" parent="plataformas/platMovel1/follow/body"]
-
-build_mode = 0
-polygon = Vector2Array( -98.1145, -34.3691, 98.2712, -34.3691, 100.538, -34.3611, 102, -33.7455, 102.692, -32.9761, 103.615, -31.9758, 104.308, -31.2064, 105.077, -30.36, 105.077, -0.291626, 104.033, 1.33215, 102.758, 2.72394, 100.322, 4.81158, -98.6506, 4.82532, -100.212, 4.86053, -100.778, 4.3515, -101.287, 3.78589, -102.418, 2.93744, -104.228, 1.91937, -104.963, 0.279053, -104.973, -30.9016, -103.665, -32.3636, -101.202, -34.2872 )
-shape_range = Vector2( 0, 5 )
-trigger = false
-
-[node name="platMovel2" type="Path2D" parent="plataformas"]
-
-editor/display_folded = true
-transform/pos = Vector2( 3311.98, 320.067 )
-curve = SubResource( 27 )
-
-[node name="follow" type="PathFollow2D" parent="plataformas/platMovel2"]
-
-transform/pos = Vector2( -4.34387, -48.1843 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="body" type="KinematicBody2D" parent="plataformas/platMovel2/follow"]
-
-input/pickable = false
-shapes/0/shape = SubResource( 20 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-shapes/1/shape = SubResource( 21 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 22 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 23 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/3/trigger = false
-shapes/4/shape = SubResource( 24 )
-shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/4/trigger = false
-shapes/5/shape = SubResource( 25 )
-shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/5/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-script/script = ExtResource( 30 )
-
-[node name="Sprite" type="Sprite" parent="plataformas/platMovel2/follow/body"]
-
-transform/pos = Vector2( -70, 0 )
-texture = ExtResource( 31 )
-
-[node name="Sprite1" type="Sprite" parent="plataformas/platMovel2/follow/body"]
-
-texture = ExtResource( 32 )
-
-[node name="Sprite2" type="Sprite" parent="plataformas/platMovel2/follow/body"]
-
-transform/pos = Vector2( 70, 0 )
-texture = ExtResource( 33 )
-
-[node name="polygon" type="CollisionPolygon2D" parent="plataformas/platMovel2/follow/body"]
-
-build_mode = 0
-polygon = Vector2Array( -98.1145, -34.3691, 98.2712, -34.3691, 100.538, -34.3611, 102, -33.7455, 102.692, -32.9761, 103.615, -31.9758, 104.308, -31.2064, 105.077, -30.36, 105.077, -0.291626, 104.033, 1.33215, 102.758, 2.72394, 100.322, 4.81158, -98.6506, 4.82532, -100.212, 4.86053, -100.778, 4.3515, -101.287, 3.78589, -102.418, 2.93744, -104.228, 1.91937, -104.963, 0.279053, -104.973, -30.9016, -103.665, -32.3636, -101.202, -34.2872 )
-shape_range = Vector2( 0, 5 )
-trigger = false
-
-[node name="platMovel3" type="Path2D" parent="plataformas"]
-
-editor/display_folded = true
-transform/pos = Vector2( 3577.81, 206.802 )
-curve = SubResource( 28 )
-
-[node name="follow" type="PathFollow2D" parent="plataformas/platMovel3"]
-
-transform/pos = Vector2( -2.0719, -64.0888 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="body" type="KinematicBody2D" parent="plataformas/platMovel3/follow"]
-
-input/pickable = false
-shapes/0/shape = SubResource( 20 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-shapes/1/shape = SubResource( 21 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 22 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 23 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/3/trigger = false
-shapes/4/shape = SubResource( 24 )
-shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/4/trigger = false
-shapes/5/shape = SubResource( 25 )
-shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/5/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-script/script = ExtResource( 30 )
-
-[node name="Sprite" type="Sprite" parent="plataformas/platMovel3/follow/body"]
-
-transform/pos = Vector2( -70, 0 )
-texture = ExtResource( 31 )
-
-[node name="Sprite1" type="Sprite" parent="plataformas/platMovel3/follow/body"]
-
-texture = ExtResource( 32 )
-
-[node name="Sprite2" type="Sprite" parent="plataformas/platMovel3/follow/body"]
-
-transform/pos = Vector2( 70, 0 )
-texture = ExtResource( 33 )
-
-[node name="polygon" type="CollisionPolygon2D" parent="plataformas/platMovel3/follow/body"]
-
-build_mode = 0
-polygon = Vector2Array( -98.1145, -34.3691, 98.2712, -34.3691, 100.538, -34.3611, 102, -33.7455, 102.692, -32.9761, 103.615, -31.9758, 104.308, -31.2064, 105.077, -30.36, 105.077, -0.291626, 104.033, 1.33215, 102.758, 2.72394, 100.322, 4.81158, -98.6506, 4.82532, -100.212, 4.86053, -100.778, 4.3515, -101.287, 3.78589, -102.418, 2.93744, -104.228, 1.91937, -104.963, 0.279053, -104.973, -30.9016, -103.665, -32.3636, -101.202, -34.2872 )
-shape_range = Vector2( 0, 5 )
-trigger = false
-
-[node name="platMovel4" type="Path2D" parent="plataformas"]
-
-editor/display_folded = true
-transform/pos = Vector2( 3324.38, 75.1 )
-curve = SubResource( 29 )
-
-[node name="follow" type="PathFollow2D" parent="plataformas/platMovel4"]
-
-transform/pos = Vector2( -2.0343, -76.1496 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="body" type="KinematicBody2D" parent="plataformas/platMovel4/follow"]
-
-input/pickable = false
-shapes/0/shape = SubResource( 20 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-shapes/1/shape = SubResource( 21 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 22 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 23 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/3/trigger = false
-shapes/4/shape = SubResource( 24 )
-shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/4/trigger = false
-shapes/5/shape = SubResource( 25 )
-shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/5/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-script/script = ExtResource( 30 )
-
-[node name="Sprite" type="Sprite" parent="plataformas/platMovel4/follow/body"]
-
-transform/pos = Vector2( -70, 0 )
-texture = ExtResource( 31 )
-
-[node name="Sprite1" type="Sprite" parent="plataformas/platMovel4/follow/body"]
-
-texture = ExtResource( 32 )
-
-[node name="Sprite2" type="Sprite" parent="plataformas/platMovel4/follow/body"]
-
-transform/pos = Vector2( 70, 0 )
-texture = ExtResource( 33 )
-
-[node name="polygon" type="CollisionPolygon2D" parent="plataformas/platMovel4/follow/body"]
-
-build_mode = 0
-polygon = Vector2Array( -98.1145, -34.3691, 98.2712, -34.3691, 100.538, -34.3611, 102, -33.7455, 102.692, -32.9761, 103.615, -31.9758, 104.308, -31.2064, 105.077, -30.36, 105.077, -0.291626, 104.033, 1.33215, 102.758, 2.72394, 100.322, 4.81158, -98.6506, 4.82532, -100.212, 4.86053, -100.778, 4.3515, -101.287, 3.78589, -102.418, 2.93744, -104.228, 1.91937, -104.963, 0.279053, -104.973, -30.9016, -103.665, -32.3636, -101.202, -34.2872 )
-shape_range = Vector2( 0, 5 )
-trigger = false
-
-[node name="platMovel5" type="Path2D" parent="plataformas"]
-
-editor/display_folded = true
-transform/pos = Vector2( 3576.06, -36.8715 )
-curve = SubResource( 30 )
-
-[node name="follow" type="PathFollow2D" parent="plataformas/platMovel5"]
-
-transform/pos = Vector2( 5.00696, -88.3145 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="body" type="KinematicBody2D" parent="plataformas/platMovel5/follow"]
-
-input/pickable = false
-shapes/0/shape = SubResource( 20 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-shapes/1/shape = SubResource( 21 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 22 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 23 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/3/trigger = false
-shapes/4/shape = SubResource( 24 )
-shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/4/trigger = false
-shapes/5/shape = SubResource( 25 )
-shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/5/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-script/script = ExtResource( 30 )
-
-[node name="Sprite" type="Sprite" parent="plataformas/platMovel5/follow/body"]
-
-transform/pos = Vector2( -70, 0 )
-texture = ExtResource( 31 )
-
-[node name="Sprite1" type="Sprite" parent="plataformas/platMovel5/follow/body"]
-
-texture = ExtResource( 32 )
-
-[node name="Sprite2" type="Sprite" parent="plataformas/platMovel5/follow/body"]
-
-transform/pos = Vector2( 70, 0 )
-texture = ExtResource( 33 )
-
-[node name="polygon" type="CollisionPolygon2D" parent="plataformas/platMovel5/follow/body"]
-
-build_mode = 0
-polygon = Vector2Array( -98.1145, -34.3691, 98.2712, -34.3691, 100.538, -34.3611, 102, -33.7455, 102.692, -32.9761, 103.615, -31.9758, 104.308, -31.2064, 105.077, -30.36, 105.077, -0.291626, 104.033, 1.33215, 102.758, 2.72394, 100.322, 4.81158, -98.6506, 4.82532, -100.212, 4.86053, -100.778, 4.3515, -101.287, 3.78589, -102.418, 2.93744, -104.228, 1.91937, -104.963, 0.279053, -104.973, -30.9016, -103.665, -32.3636, -101.202, -34.2872 )
-shape_range = Vector2( 0, 5 )
-trigger = false
-
-[node name="platMovel6" type="Path2D" parent="plataformas"]
-
-editor/display_folded = true
-transform/pos = Vector2( 3319.81, -148.883 )
-curve = SubResource( 31 )
-
-[node name="follow" type="PathFollow2D" parent="plataformas/platMovel6"]
-
-transform/pos = Vector2( 3.8255, -100.609 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="body" type="KinematicBody2D" parent="plataformas/platMovel6/follow"]
-
-input/pickable = false
-shapes/0/shape = SubResource( 20 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-shapes/1/shape = SubResource( 21 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 22 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 23 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/3/trigger = false
-shapes/4/shape = SubResource( 24 )
-shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/4/trigger = false
-shapes/5/shape = SubResource( 25 )
-shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/5/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-script/script = ExtResource( 30 )
-
-[node name="Sprite" type="Sprite" parent="plataformas/platMovel6/follow/body"]
-
-transform/pos = Vector2( -70, 0 )
-texture = ExtResource( 31 )
-
-[node name="Sprite1" type="Sprite" parent="plataformas/platMovel6/follow/body"]
-
-texture = ExtResource( 32 )
-
-[node name="Sprite2" type="Sprite" parent="plataformas/platMovel6/follow/body"]
-
-transform/pos = Vector2( 70, 0 )
-texture = ExtResource( 33 )
-
-[node name="polygon" type="CollisionPolygon2D" parent="plataformas/platMovel6/follow/body"]
-
-build_mode = 0
-polygon = Vector2Array( -98.1145, -34.3691, 98.2712, -34.3691, 100.538, -34.3611, 102, -33.7455, 102.692, -32.9761, 103.615, -31.9758, 104.308, -31.2064, 105.077, -30.36, 105.077, -0.291626, 104.033, 1.33215, 102.758, 2.72394, 100.322, 4.81158, -98.6506, 4.82532, -100.212, 4.86053, -100.778, 4.3515, -101.287, 3.78589, -102.418, 2.93744, -104.228, 1.91937, -104.963, 0.279053, -104.973, -30.9016, -103.665, -32.3636, -101.202, -34.2872 )
-shape_range = Vector2( 0, 5 )
-trigger = false
-
 [node name="platMovel7" type="Path2D" parent="plataformas"]
 
 transform/pos = Vector2( 5386, -148.883 )
-curve = SubResource( 31 )
+curve = SubResource( 26 )
 
 [node name="follow" type="PathFollow2D" parent="plataformas/platMovel7"]
 
@@ -2723,7 +2301,7 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 2001.89, 506.903 )
 input/pickable = true
-shapes/0/shape = SubResource( 32 )
+shapes/0/shape = SubResource( 27 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -2751,7 +2329,7 @@ max_lines_visible = -1
 
 [node name="shape" type="CollisionShape2D" parent="porta-fechada"]
 
-shape = SubResource( 32 )
+shape = SubResource( 27 )
 trigger = false
 _update_shape_index = 0
 
@@ -2908,7 +2486,7 @@ editor/display_folded = true
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 33 )
+shapes/0/shape = SubResource( 28 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 11658.5, 516.095 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -2925,7 +2503,7 @@ texture = ExtResource( 43 )
 [node name="Shape" type="CollisionShape2D" parent="HotDogs/HotDogArea"]
 
 transform/pos = Vector2( 11658.5, 516.095 )
-shape = SubResource( 33 )
+shape = SubResource( 28 )
 trigger = false
 _update_shape_index = 0
 
@@ -2933,7 +2511,7 @@ _update_shape_index = 0
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 34 )
+shapes/0/shape = SubResource( 29 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 11501.2, 744.021 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -2950,7 +2528,7 @@ texture = ExtResource( 43 )
 [node name="Shape" type="CollisionShape2D" parent="HotDogs/HotDogArea2"]
 
 transform/pos = Vector2( 11501.2, 744.021 )
-shape = SubResource( 34 )
+shape = SubResource( 29 )
 trigger = false
 _update_shape_index = 0
 
@@ -2959,7 +2537,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 14406.4, -2546.17 )
 input/pickable = true
-shapes/0/shape = SubResource( 34 )
+shapes/0/shape = SubResource( 29 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -2974,7 +2552,7 @@ texture = ExtResource( 43 )
 
 [node name="Shape" type="CollisionShape2D" parent="HotDogs/HotDogArea3"]
 
-shape = SubResource( 34 )
+shape = SubResource( 29 )
 trigger = false
 _update_shape_index = 0
 
@@ -2983,7 +2561,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 14182.2, -2690.17 )
 input/pickable = true
-shapes/0/shape = SubResource( 34 )
+shapes/0/shape = SubResource( 29 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -2998,7 +2576,7 @@ texture = ExtResource( 43 )
 
 [node name="Shape" type="CollisionShape2D" parent="HotDogs/HotDogArea4"]
 
-shape = SubResource( 34 )
+shape = SubResource( 29 )
 trigger = false
 _update_shape_index = 0
 
@@ -3007,7 +2585,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 8674.21, -461.124 )
 input/pickable = true
-shapes/0/shape = SubResource( 34 )
+shapes/0/shape = SubResource( 29 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -3022,7 +2600,7 @@ texture = ExtResource( 43 )
 
 [node name="Shape" type="CollisionShape2D" parent="HotDogs/HotDogArea5"]
 
-shape = SubResource( 34 )
+shape = SubResource( 29 )
 trigger = false
 _update_shape_index = 0
 
@@ -3030,7 +2608,7 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 539.88, 208.451 )
 input/pickable = true
-shapes/0/shape = SubResource( 35 )
+shapes/0/shape = SubResource( 30 )
 shapes/0/transform = Matrix32( 0.859224, 0, 0, 1, 52742.2, -1944.14 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -3061,14 +2639,14 @@ expand = true
 
 transform/pos = Vector2( 52742.2, -1944.14 )
 transform/scale = Vector2( 0.859224, 1 )
-shape = SubResource( 35 )
+shape = SubResource( 30 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Back" type="Area2D" parent="RickRoll"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 36 )
+shapes/0/shape = SubResource( 31 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -6412.42, 1417.11 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -3079,7 +2657,7 @@ angular_damp = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RickRoll/Back"]
 
 transform/pos = Vector2( -6412.42, 1417.11 )
-shape = SubResource( 36 )
+shape = SubResource( 31 )
 trigger = false
 _update_shape_index = 0
 
