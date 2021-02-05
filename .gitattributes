@@ -1,1 +1,1 @@
-*.PHP linguist-vendored
+*.PHP linguist-detectable=false
