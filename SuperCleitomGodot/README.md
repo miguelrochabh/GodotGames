@@ -10,5 +10,5 @@ Com esse projeto aprendi muito sobre a engine Godot. Qualquer bug pode ser repor
 
 # Downloads
 Versão para <a href="https://github.com/miguelrochabh/GodotGames/raw/main/SuperCleitomGodot/bin/supercleitom.apk">Android</a></br>
-Versão para <a href="https://github.com/miguelrochabh/GodotGames/raw/main/SuperCleitomGodot/bin/SuperCleitom.run">Linux</a></br>
-Versão para <a href="https://github.com/miguelrochabh/GodotGames/raw/main/SuperCleitomGodot/bin/SuperCleitom.exe">Windows</a></br>
+Versão para <a href="https://github.com/miguelrochabh/GodotGames/raw/main/SuperCleitomGodot/bin/supercleitom.run">Linux</a></br>
+Versão para <a href="https://github.com/miguelrochabh/GodotGames/raw/main/SuperCleitomGodot/bin/supercleitom.exe">Windows</a></br>
