@@ -1,6 +1,6 @@
 HandSpinner/engine.cfg linguist-language=GDScript
 SuperCleitomGodot/export.cfg linguist-language=GDScript
-PrimeiroJogoGodot/Felpudo-Fly/engine.cfg language-detectable=GDScript
+PrimeiroJogoGodot/Felpudo-Fly/engine.cfg linguist-language=GDScript
 SuperCleitomGodot/engine.cfg linguist-language=GDScript
 PrimeiroJogoGodot/Felpudo-Fly/export.cfg linguist-language=GDScript
 SuperCleitomGodot/assets/russo.inc linguist-language=GDScript
