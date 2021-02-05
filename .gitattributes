@@ -1,1 +1,9 @@
-*.PHP linguist-detectable=false
+HandSpinner/engine.cfg linguist-language=GDScript
+SuperCleitomGodot/export.cfg linguist-detectable=GDScript
+PrimeiroJogoGodot/Felpudo-Fly/engine.cfg linguist-detectable=GDScript
+SuperCleitomGodot/engine.cfg linguist-detectable=GDScript
+PrimeiroJogoGodot/Felpudo-Fly/export.cfg linguist-detectable=GDScript
+SuperCleitomGodot/assets/russo.inc linguist-detectable=GDScript
+SuperCleitomGodot/assets/modak.inc linguist-detectable=GDScript
+HandSpinner/assets/font100.inc linguist-detectable=GDScript
+PrimeiroJogoGodot/Felpudo-Fly/assets/font160.inc linguist-detectable=GDScript
