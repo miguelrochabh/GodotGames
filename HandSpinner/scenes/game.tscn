@@ -1,0 +1,411 @@
+[gd_scene load_steps=12 format=1]
+
+[ext_resource path="res://scripts/game.gd" type="Script" id=1]
+[ext_resource path="res://scenes/spinner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/black_ready.png" type="Texture" id=3]
+[ext_resource path="res://assets/red_ready.png" type="Texture" id=4]
+[ext_resource path="res://assets/yellow_ready.png" type="Texture" id=5]
+[ext_resource path="res://scripts/speed.gd" type="Script" id=6]
+[ext_resource path="res://assets/font100.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://assets/reset.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[node name="Game" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Spinner1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 360, 1000 )
+transform/rot = -180.0
+
+[node name="Spinner2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 360, 280 )
+
+[node name="Control" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+
+rect/rotation = -0.00984751
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 630.0
+margin/right = 720.0
+margin/bottom = 650.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Player1" type="Control" parent="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="BtnBlack" type="TextureButton" parent="Control/Player1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 620.0
+margin/top = 650.0
+margin/right = 720.0
+margin/bottom = 750.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="BtnRed" type="TextureButton" parent="Control/Player1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 620.0
+margin/top = 735.0
+margin/right = 720.0
+margin/bottom = 835.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="BtnYellow" type="TextureButton" parent="Control/Player1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 620.0
+margin/top = 820.0
+margin/right = 720.0
+margin/bottom = 920.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 5 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Speed" type="ProgressBar" parent="Control/Player1"]
+
+rect/rotation = -90.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 80.0
+margin/top = 650.0
+margin/right = 710.0
+margin/bottom = 730.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 50.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = false
+script/script = ExtResource( 6 )
+
+[node name="Score" type="Label" parent="Control/Player1"]
+
+rect/min_size = Vector2( 720, 107 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -1.0
+margin/top = 647.0
+margin/right = 722.0
+margin/bottom = 754.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+text = "0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Msg" type="Label" parent="Control/Player1"]
+
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 89.0
+margin/top = 759.0
+margin/right = 918.0
+margin/bottom = 866.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Reset1" type="TextureButton" parent="Control/Player1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 93.0
+margin/top = 656.0
+margin/right = 248.0
+margin/bottom = 811.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 8 )
+params/resize_mode = 0
+params/scale = Vector2( 0.1, 0.1 )
+params/stretch_mode = 0
+
+[node name="Player2" type="Control" parent="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="BtnBlack" type="TextureButton" parent="Control/Player2"]
+
+rect/rotation = 180.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 630.0
+margin/right = 200.0
+margin/bottom = 730.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="BtnRed" type="TextureButton" parent="Control/Player2"]
+
+rect/rotation = 180.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 545.0
+margin/right = 200.0
+margin/bottom = 645.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="BtnYellow" type="TextureButton" parent="Control/Player2"]
+
+rect/rotation = 180.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 460.0
+margin/right = 200.0
+margin/bottom = 560.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 5 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="Speed" type="ProgressBar" parent="Control/Player2"]
+
+rect/rotation = 90.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 640.0
+margin/top = 630.0
+margin/right = 1270.0
+margin/bottom = 710.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 50.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = false
+script/script = ExtResource( 6 )
+
+[node name="Score" type="Label" parent="Control/Player2"]
+
+rect/min_size = Vector2( 720, 107 )
+rect/rotation = 180.041
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 721.0
+margin/top = 631.0
+margin/right = 1444.0
+margin/bottom = 738.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+text = "0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Msg" type="Label" parent="Control/Player2"]
+
+rect/rotation = 180.0
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 614.0
+margin/top = 525.0
+margin/right = 1443.0
+margin/bottom = 632.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Reset2" type="TextureButton" parent="Control/Player2"]
+
+rect/rotation = 180.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 635.0
+margin/top = 625.0
+margin/right = 687.0
+margin/bottom = 677.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 8 )
+params/resize_mode = 0
+params/scale = Vector2( 0.1, 0.1 )
+params/stretch_mode = 0
+
+[node name="EntreRound" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="block" from="." to="Spinner2" method="_on_Game_block"]
+
+[connection signal="block" from="." to="Spinner1" method="_on_Game_block"]
+
+[connection signal="unblock" from="." to="Spinner2" method="_on_Game_unblock"]
+
+[connection signal="unblock" from="." to="Spinner1" method="_on_Game_unblock"]
+
+[connection signal="limit" from="Spinner1" to="." method="_on_Spinner1_limit"]
+
+[connection signal="speed" from="Spinner1" to="Control/Player1/Speed" method="_on_Spinner_speed"]
+
+[connection signal="zero" from="Spinner1" to="." method="_on_Spinner1_zero"]
+
+[connection signal="limit" from="Spinner2" to="." method="_on_Spinner2_limit"]
+
+[connection signal="speed" from="Spinner2" to="Control/Player2/Speed" method="_on_Spinner_speed"]
+
+[connection signal="zero" from="Spinner2" to="." method="_on_Spinner2_zero"]
+
+[connection signal="pressed" from="Control/Player1/BtnBlack" to="Spinner1" method="_on_BtnBlack_pressed"]
+
+[connection signal="pressed" from="Control/Player1/BtnRed" to="Spinner1" method="_on_BtnRed_pressed"]
+
+[connection signal="pressed" from="Control/Player1/BtnYellow" to="Spinner1" method="_on_BtnYellow_pressed"]
+
+[connection signal="pressed" from="Control/Player1/Reset1" to="." method="_on_Reset1_pressed"]
+
+[connection signal="pressed" from="Control/Player2/BtnBlack" to="Spinner2" method="_on_BtnBlack_pressed"]
+
+[connection signal="pressed" from="Control/Player2/BtnRed" to="Spinner2" method="_on_BtnRed_pressed"]
+
+[connection signal="pressed" from="Control/Player2/BtnYellow" to="Spinner2" method="_on_BtnYellow_pressed"]
+
+[connection signal="pressed" from="Control/Player2/Reset2" to="." method="_on_Reset2_pressed"]
+
+[connection signal="timeout" from="EntreRound" to="." method="_on_EntreRound_timeout"]
+
+
