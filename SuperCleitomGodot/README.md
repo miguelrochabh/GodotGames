@@ -5,7 +5,7 @@ Assets: https://kenney.nl/assets/platformer-art-deluxe</br>
 
 # Sobre o Desenvolvimento
 <p>O jogo demorou 2 meses para ser feito tento começado no dia <a href="https://drive.google.com/file/d/18rdI9KFtt8xSM8KmcPE0ZJMmuLKL4X4C/view?usp=sharing">09/10/2020</a> e terminado no dia 15/12/2020.</br>
-Com esse projeto aprendi muito sobre a engine Godot. Qualquer bug pode ser reportado na aba Issues.
+Com esse projeto aprendi muito sobre a engine Godot. Qualquer bug pode ser reportado na aba Issues.</br>
 <img src="Screenshots/menu.png">
 
 # Downloads
