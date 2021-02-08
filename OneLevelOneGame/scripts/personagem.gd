@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-const WALK_FORCE = 600
+const WALK_FORCE = 1000
 const WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
-const JUMP_SPEED = 200
+const JUMP_SPEED = 100
 
 var velocity = Vector2()
 
@@ -23,3 +23,4 @@ func _physics_process(delta):
 
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
+

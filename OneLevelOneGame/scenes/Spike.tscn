@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/spike.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Spike.gd" type="Script" id=2]
+
+[node name="Espinho" type="Sprite"]
+position = Vector2( -33.9543, -38.1783 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -69.6947, 36.863, 69.684, -0.147156, -70.4822, -35.5825 )
