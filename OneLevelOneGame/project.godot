@@ -15,7 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="One Game One Level"
+config/name="One Level One Game"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [rendering]
