@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/ground.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.9922, 30 )
+extents = Vector2( 8, 7.99219 )
 
 [node name="Main" type="Node2D"]
 
