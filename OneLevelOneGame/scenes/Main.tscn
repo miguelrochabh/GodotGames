@@ -82,6 +82,22 @@ rotation = -1.57079
 position = Vector2( 104.264, 224.188 )
 rotation = -1.57079
 
+[node name="Espinho18" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 475.063, 224.004 )
+rotation = -1.57079
+
+[node name="Espinho19" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 461.032, 224.004 )
+rotation = -1.57079
+
+[node name="Espinho20" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 446.159, 224.004 )
+rotation = -1.57079
+
+[node name="Espinho21" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 431.287, 224.004 )
+rotation = -1.57079
+
 [node name="Espinho8" parent="Espinhos" instance=ExtResource( 5 )]
 position = Vector2( 243.796, -48.0179 )
 rotation = 1.57079
@@ -105,6 +121,50 @@ rotation = 1.57079
 [node name="Espinho13" parent="Espinhos" instance=ExtResource( 5 )]
 position = Vector2( 315.418, -48.0179 )
 rotation = 1.57079
+
+[node name="Espinho14" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 612.867, 0.0349731 )
+rotation = 1.57079
+
+[node name="Espinho15" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 598.237, 0.0349731 )
+rotation = 1.57079
+
+[node name="Espinho16" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 583.843, 0.0349731 )
+rotation = 1.57079
+
+[node name="Espinho17" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 569.811, 0.0349731 )
+rotation = 1.57079
+
+[node name="Espinho22" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 702.549, 127.998 )
+rotation = -1.57079
+
+[node name="Espinho23" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 716.935, 127.998 )
+rotation = -1.57079
+
+[node name="Espinho24" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 731.441, 127.998 )
+rotation = -1.57079
+
+[node name="Espinho25" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 745.946, 127.998 )
+rotation = -1.57079
+
+[node name="Espinho26" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 571.226, 224.035 )
+rotation = -1.57079
+
+[node name="Espinho27" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 585.926, 224.035 )
+rotation = -1.57079
+
+[node name="Espinho28" parent="Espinhos" instance=ExtResource( 5 )]
+position = Vector2( 600.626, 224.035 )
+rotation = -1.57079
 [connection signal="body_entered" from="Espinhos/Espinho" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho2" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho3" to="." method="_on_Espinho_body_entered"]
@@ -112,9 +172,24 @@ rotation = 1.57079
 [connection signal="body_entered" from="Espinhos/Espinho5" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho6" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho7" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho18" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho19" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho20" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho21" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho8" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho9" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho10" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho11" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho12" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho13" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho14" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho15" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho16" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho17" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho22" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho23" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho24" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho25" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho26" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho27" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Espinhos/Espinho28" to="." method="_on_Espinho_body_entered"]
