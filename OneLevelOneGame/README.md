@@ -3,4 +3,4 @@ Clone do jogo <a href="https://armorgames.com/play/4309/this-is-the-only-level">
 Feito para treinar a <a href="https://godotengine.org/">Godot Engine</a></br>
 O jogo se consiste em 1 nível que muda em algum aspecto toda vez que é completado.</br>
 </br>
-<span style="color:red">AINDA EM DESENVOLVIMENTO</span>.
+<bold>AINDA EM DESENVOLVIMENTO</bold>.
