@@ -301,7 +301,6 @@ margin_right = 121.052
 margin_bottom = 343.316
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.670588, 0.662745, 0.662745, 1 )
-clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
