@@ -6,6 +6,7 @@ const STOP_FORCE = 1300
 const JUMP_SPEED = 300
 
 var velocity = Vector2()
+var a = false
 
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -18,8 +19,6 @@ func _physics_process(delta):
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 
 	velocity.y += gravity * delta
-
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
-	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED

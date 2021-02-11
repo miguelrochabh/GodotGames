@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tubo.png" type="Texture" id=2]
 [ext_resource path="res://scripts/game.gd" type="Script" id=3]
 [ext_resource path="res://assets/ground.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/barra.png" type="Texture" id=6]
+[ext_resource path="res://assets/botao.png" type="Texture" id=7]
+[ext_resource path="res://assets/Painel/fundo.png" type="Texture" id=8]
+[ext_resource path="res://fonts/RussoOne-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0.127319, 16, 0.127319, 0, 16, 0 )
@@ -32,6 +36,37 @@ points = PoolVector2Array( 16, 16, 0.127319, 16, 0.127319, 0, 16, 0 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 4.78003, 83.77 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5.2738, 26.0081 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 410.357 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 0.809448, 16.3495 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 9 )
+
 [node name="Main" type="Node2D"]
 position = Vector2( 55.713, 98.5436 )
 script = ExtResource( 3 )
@@ -55,6 +90,24 @@ __meta__ = {
 position = Vector2( 20.2885, -78.4689 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
+
+[node name="Tubo2" type="Sprite" parent="."]
+position = Vector2( 700.121, 241.428 )
+rotation = 1.57079
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="Cima" type="StaticBody2D" parent="Tubo2"]
+
+[node name="Shape" type="CollisionShape2D" parent="Tubo2/Cima"]
+position = Vector2( -88.9819, -15.7488 )
+shape = SubResource( 3 )
+
+[node name="Baixo" type="StaticBody2D" parent="Tubo2"]
+
+[node name="Shape" type="CollisionShape2D" parent="Tubo2/Baixo"]
+position = Vector2( 89.1829, -15.7485 )
+shape = SubResource( 3 )
 
 [node name="Espinhos" type="Node2D" parent="."]
 
@@ -165,6 +218,93 @@ rotation = -1.57079
 [node name="Espinho28" parent="Espinhos" instance=ExtResource( 5 )]
 position = Vector2( 600.626, 224.035 )
 rotation = -1.57079
+
+[node name="Barreira" type="StaticBody2D" parent="."]
+z_index = -5
+
+[node name="Sprite" type="Sprite" parent="Barreira"]
+position = Vector2( 635.801, 239.996 )
+scale = Vector2( 1.50835, 1.23071 )
+texture = ExtResource( 6 )
+
+[node name="Shape" type="CollisionShape2D" parent="Barreira"]
+position = Vector2( 635.795, 239.996 )
+scale = Vector2( 1, 1.23071 )
+shape = SubResource( 4 )
+
+[node name="Anim" type="AnimationPlayer" parent="Barreira"]
+anims/Open = SubResource( 5 )
+
+[node name="Botao" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Botao"]
+position = Vector2( 316.329, -7.49892 )
+z_index = -21
+texture = ExtResource( 7 )
+
+[node name="Shape" type="CollisionPolygon2D" parent="Botao"]
+polygon = PoolVector2Array( 286.854, -0.301582, 286.891, -7.06766, 288.625, -8.06622, 291.095, -9.48524, 293.671, -10.694, 296.877, -12.0079, 299.977, -12.7963, 302.605, -13.4795, 305.916, -14.5306, 309.08, -14.9053, 312.628, -14.8265, 316.633, -14.8799, 322.17, -14.8916, 324.784, -14.8985, 327.832, -13.8999, 330.355, -13.3218, 333.088, -12.113, 336.924, -10.7991, 342.18, -9.22244, 344.335, -8.01366, 345.701, -7.22531, 345.81, -0.147881 )
+
+[node name="Pass" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Pass"]
+position = Vector2( 718.312, 241.59 )
+shape = SubResource( 6 )
+
+[node name="Painel" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fundo" type="TextureRect" parent="Painel"]
+modulate = Color( 0.537255, 0.537255, 0.537255, 1 )
+margin_left = -56.0
+margin_top = 287.666
+margin_right = 729.0
+margin_bottom = 385.666
+texture = ExtResource( 8 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="Painel"]
+margin_left = -51.0
+margin_top = 296.0
+margin_right = 4.0
+margin_bottom = 316.0
+custom_fonts/font = SubResource( 7 )
+text = "Level 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stage" type="Label" parent="Painel"]
+margin_left = 22.7551
+margin_top = 300.316
+margin_right = 70.7551
+margin_bottom = 343.316
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.662745, 1 )
+text = "Stage
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StageNumber" type="Label" parent="Painel"]
+margin_left = 73.052
+margin_top = 300.316
+margin_right = 121.052
+margin_bottom = 343.316
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.662745, 1 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Espinhos/Espinho" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho2" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho3" to="." method="_on_Espinho_body_entered"]
@@ -193,3 +333,5 @@ rotation = -1.57079
 [connection signal="body_entered" from="Espinhos/Espinho26" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho27" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho28" to="." method="_on_Espinho_body_entered"]
+[connection signal="body_entered" from="Botao" to="." method="_on_Botao_body_entered"]
+[connection signal="body_exited" from="Botao" to="." method="_on_Botao_body_exited"]
