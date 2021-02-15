@@ -24,6 +24,10 @@ config/icon="res://icon.png"
 window/size/width=784
 window/size/height=484
 
+[editor_plugins]
+
+enabled=PoolStringArray( "Todo_Manager" )
+
 [input]
 
 jump={

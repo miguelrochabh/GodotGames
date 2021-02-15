@@ -5,15 +5,18 @@ onready var unpressed = get_node("Botao/Sprite")
 onready var stagelabel = get_node("Painel/Stage")
 onready var stagenumber = get_node("Painel/StageNumber")
 var opened = false
-var stage = 1
+var stage = 0
+var entered = false
 
 func _ready():
+	stage = 0
 	stagelabel.set_text("Stage")
 	stagenumber.text = (str(stagenumber))
+	updatestage(stage)
 
 func _on_Espinho_body_entered(body):
 	morrer()
-
+ 
 func morrer():
 	get_node("Personagem").set_position(Vector2(17, -71))
 
@@ -27,3 +30,12 @@ func _on_Botao_body_entered(body):
 func _on_Botao_body_exited(body):
 	get_node("Botao/Sprite").set_texture(load("res://assets/botao.png"))
 	get_node("Botao/Sprite").set_position(Vector2(316.329, -7.499))
+
+func updatestage(stage):
+	get_node("Painel/StageNumber").set_text(str(stage+1))
+
+func _on_Area2D_body_entered(body):
+	if entered: return
+	entered = true
+	stage = stage+1
+	updatestage(stage)

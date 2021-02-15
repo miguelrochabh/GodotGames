@@ -18,6 +18,8 @@ func _physics_process(delta):
 		velocity.x += walk * delta
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 
+
+
 	velocity.y += gravity * delta
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 	if is_on_floor() and Input.is_action_just_pressed("jump"):

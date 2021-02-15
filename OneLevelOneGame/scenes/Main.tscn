@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tubo.png" type="Texture" id=2]
@@ -7,8 +7,8 @@
 [ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/barra.png" type="Texture" id=6]
 [ext_resource path="res://assets/botao.png" type="Texture" id=7]
-[ext_resource path="res://assets/Painel/fundo.png" type="Texture" id=8]
 [ext_resource path="res://fonts/RussoOne-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://fonts/DroidSansMono.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0.127319, 16, 0.127319, 0, 16, 0 )
@@ -36,9 +36,6 @@ points = PoolVector2Array( 16, 16, 0.127319, 16, 0.127319, 0, 16, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 4.78003, 83.77 )
-
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 5.2738, 26.0081 )
 
@@ -60,12 +57,24 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 0.809448, 16.3495 )
 
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 1, 0.905882, 1 )
+
 [sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 4.78003, 83.77 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 2.04321, 15.9069 )
 
 [node name="Main" type="Node2D"]
 position = Vector2( 55.713, 98.5436 )
@@ -90,24 +99,6 @@ __meta__ = {
 position = Vector2( 20.2885, -78.4689 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
-
-[node name="Tubo2" type="Sprite" parent="."]
-position = Vector2( 700.121, 241.428 )
-rotation = 1.57079
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 2 )
-
-[node name="Cima" type="StaticBody2D" parent="Tubo2"]
-
-[node name="Shape" type="CollisionShape2D" parent="Tubo2/Cima"]
-position = Vector2( -88.9819, -15.7488 )
-shape = SubResource( 3 )
-
-[node name="Baixo" type="StaticBody2D" parent="Tubo2"]
-
-[node name="Shape" type="CollisionShape2D" parent="Tubo2/Baixo"]
-position = Vector2( 89.1829, -15.7485 )
-shape = SubResource( 3 )
 
 [node name="Espinhos" type="Node2D" parent="."]
 
@@ -258,14 +249,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Fundo" type="TextureRect" parent="Painel"]
+[node name="Fundo" type="Panel" parent="Painel"]
 modulate = Color( 0.537255, 0.537255, 0.537255, 1 )
 margin_left = -56.0
-margin_top = 287.666
+margin_top = 288.0
 margin_right = 729.0
-margin_bottom = 385.666
-texture = ExtResource( 8 )
-stretch_mode = 1
+margin_bottom = 386.0
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -304,6 +294,41 @@ custom_colors/font_color = Color( 0.670588, 0.662745, 0.662745, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="Painel"]
+margin_left = -51.026
+margin_top = 322.098
+margin_right = 7.97401
+margin_bottom = 336.098
+custom_fonts/font = SubResource( 10 )
+text = "\"Normal\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Tubo2" type="Sprite" parent="Area2D"]
+position = Vector2( 700.121, 241.428 )
+rotation = 1.57079
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="Cima" type="StaticBody2D" parent="Area2D/Tubo2"]
+
+[node name="Shape" type="CollisionShape2D" parent="Area2D/Tubo2/Cima"]
+position = Vector2( -88.9819, -15.7488 )
+shape = SubResource( 3 )
+
+[node name="Baixo" type="StaticBody2D" parent="Area2D/Tubo2"]
+
+[node name="Shape" type="CollisionShape2D" parent="Area2D/Tubo2/Baixo"]
+position = Vector2( 89.1829, -15.7485 )
+shape = SubResource( 3 )
+
+[node name="Shape" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 716.431, 241.511 )
+shape = SubResource( 9 )
 [connection signal="body_entered" from="Espinhos/Espinho" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho2" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho3" to="." method="_on_Espinho_body_entered"]
@@ -334,3 +359,4 @@ __meta__ = {
 [connection signal="body_entered" from="Espinhos/Espinho28" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Botao" to="." method="_on_Botao_body_entered"]
 [connection signal="body_exited" from="Botao" to="." method="_on_Botao_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
