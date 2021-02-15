@@ -6,11 +6,12 @@ const STOP_FORCE = 1300
 const JUMP_SPEED = 300
 
 var velocity = Vector2()
-var a = false
+var finished = false
 
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	if finished: return
 	var walk = WALK_FORCE * (Input.get_action_strength("move_right") - Input.get_action_strength("move_left"))
 	if abs(walk) < WALK_FORCE * 0.2:
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
@@ -24,3 +25,7 @@ func _physics_process(delta):
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
+
+
+func _on_Main_finished():
+	finished = true

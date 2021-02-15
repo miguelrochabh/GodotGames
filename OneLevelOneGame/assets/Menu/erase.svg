@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2000mm"
+   height="355mm"
+   viewBox="0 0 2000 354.99999"
+   version="1.1"
+   id="svg8"
+   inkscape:export-filename="/home/jrocha/Miguel/GodotGames/OneLevelOneGame/assets/Menu/erase.png"
+   inkscape:export-xdpi="11"
+   inkscape:export-ydpi="11"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
+   sodipodi:docname="erase.svg">
+  <defs
+     id="defs2">
+    <rect
+       x="-748.81519"
+       y="-313.16693"
+       width="49.110775"
+       height="24.555387"
+       id="rect112" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.08"
+     inkscape:cx="-2829.8"
+     inkscape:cy="1690.9322"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1331"
+     inkscape:window-height="713"
+     inkscape:window-x="35"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     scale-x="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:191.125px;line-height:0.25;font-family:'Russo One';-inkscape-font-specification:'Russo One, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+       x="-8.7633991"
+       y="250.08617"
+       id="text12"
+       inkscape:export-xdpi="11"
+       inkscape:export-ydpi="11"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="-8.7633991"
+         y="250.08617"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:191.125px;font-family:'Russo One';-inkscape-font-specification:'Russo One, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000080;stroke-width:0.264582">ERASE GAME</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text110"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:0.25;font-family:'Lohit Gujarati';-inkscape-font-specification:'Lohit Gujarati, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect112);fill:#000000;fill-opacity:1;stroke:none" />
+  </g>
+</svg>

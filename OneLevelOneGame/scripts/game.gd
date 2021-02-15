@@ -8,6 +8,8 @@ var opened = false
 var stage = 0
 var entered = false
 
+signal finished
+
 func _ready():
 	stage = 0
 	stagelabel.set_text("Stage")
@@ -34,8 +36,9 @@ func _on_Botao_body_exited(body):
 func updatestage(stage):
 	get_node("Painel/StageNumber").set_text(str(stage+1))
 
-func _on_Area2D_body_entered(body):
+func _on_Fim_body_entered(body):
 	if entered: return
+	emit_signal("finished")
 	entered = true
 	stage = stage+1
 	updatestage(stage)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tubo.png" type="Texture" id=2]
@@ -36,10 +36,10 @@ points = PoolVector2Array( 16, 16, 0.127319, 16, 0.127319, 0, 16, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 5.2738, 26.0081 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Open"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -54,10 +54,10 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 410.357 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 0.809448, 16.3495 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 1, 0.905882, 1 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -67,14 +67,32 @@ font_data = ExtResource( 9 )
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 10 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 4.78003, 83.77 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 2.04321, 15.9069 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/path = NodePath("White:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Main" type="Node2D"]
 position = Vector2( 55.713, 98.5436 )
@@ -221,10 +239,10 @@ texture = ExtResource( 6 )
 [node name="Shape" type="CollisionShape2D" parent="Barreira"]
 position = Vector2( 635.795, 239.996 )
 scale = Vector2( 1, 1.23071 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Anim" type="AnimationPlayer" parent="Barreira"]
-anims/Open = SubResource( 5 )
+anims/Open = SubResource( 4 )
 
 [node name="Botao" type="Area2D" parent="."]
 
@@ -240,7 +258,7 @@ polygon = PoolVector2Array( 286.854, -0.301582, 286.891, -7.06766, 288.625, -8.0
 
 [node name="Shape" type="CollisionShape2D" parent="Pass"]
 position = Vector2( 718.312, 241.59 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Painel" type="Control" parent="."]
 margin_right = 40.0
@@ -255,7 +273,7 @@ margin_left = -56.0
 margin_top = 288.0
 margin_right = 729.0
 margin_bottom = 386.0
-custom_styles/panel = SubResource( 11 )
+custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -300,35 +318,53 @@ margin_left = -51.026
 margin_top = 322.098
 margin_right = 7.97401
 margin_bottom = 336.098
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 9 )
 text = "\"Normal\""
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Fim" type="Area2D" parent="."]
 
-[node name="Tubo2" type="Sprite" parent="Area2D"]
+[node name="Tubo2" type="Sprite" parent="Fim"]
 position = Vector2( 700.121, 241.428 )
 rotation = 1.57079
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
-[node name="Cima" type="StaticBody2D" parent="Area2D/Tubo2"]
+[node name="Cima" type="StaticBody2D" parent="Fim/Tubo2"]
 
-[node name="Shape" type="CollisionShape2D" parent="Area2D/Tubo2/Cima"]
+[node name="Shape" type="CollisionShape2D" parent="Fim/Tubo2/Cima"]
 position = Vector2( -88.9819, -15.7488 )
-shape = SubResource( 3 )
+shape = SubResource( 10 )
 
-[node name="Baixo" type="StaticBody2D" parent="Area2D/Tubo2"]
+[node name="Baixo" type="StaticBody2D" parent="Fim/Tubo2"]
 
-[node name="Shape" type="CollisionShape2D" parent="Area2D/Tubo2/Baixo"]
+[node name="Shape" type="CollisionShape2D" parent="Fim/Tubo2/Baixo"]
 position = Vector2( 89.1829, -15.7485 )
-shape = SubResource( 3 )
+shape = SubResource( 10 )
 
-[node name="Shape" type="CollisionShape2D" parent="Area2D"]
+[node name="Shape" type="CollisionShape2D" parent="Fim"]
 position = Vector2( 716.431, 241.511 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
+
+[node name="Start" type="Node2D" parent="."]
+
+[node name="White" type="Panel" parent="Start"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -109.0
+margin_top = -140.0
+margin_right = 780.0
+margin_bottom = 413.0
+custom_styles/panel = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anim" type="AnimationPlayer" parent="Start"]
+autoplay = "Start"
+anims/Start = SubResource( 13 )
+[connection signal="finished" from="." to="Personagem" method="_on_Main_finished"]
 [connection signal="body_entered" from="Espinhos/Espinho" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho2" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho3" to="." method="_on_Espinho_body_entered"]
@@ -359,4 +395,4 @@ shape = SubResource( 9 )
 [connection signal="body_entered" from="Espinhos/Espinho28" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Botao" to="." method="_on_Botao_body_entered"]
 [connection signal="body_exited" from="Botao" to="." method="_on_Botao_body_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Fim" to="." method="_on_Fim_body_entered"]
