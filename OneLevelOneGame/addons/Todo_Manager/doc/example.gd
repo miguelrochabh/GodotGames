@@ -1,4 +1,3 @@
 extends Node
 
-# TODO: Adicionar botões de PÂNICO, MENU E PAUSE
-# TODO: Fazer animação de completar estágio
+# TODO: Consertar estágio 3

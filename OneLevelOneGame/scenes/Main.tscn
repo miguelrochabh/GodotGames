@@ -562,6 +562,7 @@ anims/Stage = SubResource( 18 )
 [connection signal="finished" from="." to="Personagem" method="_on_Main_finished"]
 [connection signal="inverted_commands" from="." to="Personagem" method="_on_Main_inverted_commands"]
 [connection signal="new_stage" from="." to="Personagem" method="_on_Main_new_stage"]
+[connection signal="only_right" from="." to="Personagem" method="_on_Main_only_right"]
 [connection signal="body_entered" from="Espinhos/Espinho" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho2" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho3" to="." method="_on_Espinho_body_entered"]

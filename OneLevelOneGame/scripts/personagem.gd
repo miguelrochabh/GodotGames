@@ -9,21 +9,26 @@ var velocity = Vector2()
 var finished = false
 var new_stage = false
 var flipped = false
+var only_right = false
 
 var right = "move_right"
 var left = "move_left"
 var up = "jump"
 
+var walk
+
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-	if flipped:
+	if flipped and not only_right:
 		up = "jump"
 		left = "move_right"
 		right = "move_left"
 
 	if finished or new_stage: return
-	var walk = WALK_FORCE * (Input.get_action_strength(right) - Input.get_action_strength(left))
+	
+	if only_right: walk = WALK_FORCE * (Input.get_action_strength(right) + Input.get_action_strength(left))
+	walk = WALK_FORCE * (Input.get_action_strength(right) - Input.get_action_strength(left))
 	if abs(walk) < WALK_FORCE * 0.2:
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
 	else:
@@ -43,3 +48,7 @@ func _on_Main_new_stage():
 
 func _on_Main_inverted_commands():
 	flipped = true
+
+func _on_Main_only_right():
+	flipped = false
+	only_right = true
