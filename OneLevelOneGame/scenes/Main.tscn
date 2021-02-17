@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tubo.png" type="Texture" id=2]
@@ -7,8 +7,12 @@
 [ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/barra.png" type="Texture" id=6]
 [ext_resource path="res://assets/botao.png" type="Texture" id=7]
+[ext_resource path="res://assets/Painel/menu.png" type="Texture" id=8]
 [ext_resource path="res://fonts/RussoOne-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://fonts/DroidSansMono.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/Painel/panic.png" type="Texture" id=12]
+[ext_resource path="res://assets/StagePass/level-over.png" type="Texture" id=14]
+[ext_resource path="res://assets/StagePass/stage-complete.png" type="Texture" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0.127319, 16, 0.127319, 0, 16, 0 )
@@ -37,10 +41,15 @@ points = PoolVector2Array( 16, 16, 0.127319, 16, 0.127319, 0, 16, 0 )
 0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 95.895 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 95.895 )
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 5.2738, 26.0081 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "Open"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -51,36 +60,49 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 410.357 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 575.35 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 0.809448, 16.3495 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 1, 0.905882, 1 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 size = 20
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 10 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 4.78003, 83.77 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 2.04321, 15.9069 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=13]
-resource_name = "Start"
+[sub_resource type="Animation" id=15]
+tracks/0/type = "value"
+tracks/0/path = NodePath("White:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
 tracks/0/type = "value"
 tracks/0/path = NodePath("White:modulate")
 tracks/0/interp = 1
@@ -94,6 +116,90 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.00392157, 0.454902, 0.117647, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=18]
+resource_name = "Stage"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Faixa:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 740.608, 37.5017 ), Vector2( 222.114, 37.5017 ), Vector2( -37.1334, 37.5017 ), Vector2( -830.033, 37.5017 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Complete:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 888.397, 17.5491 ), Vector2( 369.903, 17.5491 ), Vector2( 110.656, 17.5491 ), Vector2( -682.244, 17.5491 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Over:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 922.081, 131.835 ), Vector2( 412.766, 131.835 ), Vector2( 158.109, 131.835 ), Vector2( -634.791, 131.835 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Faixa:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Complete:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Over:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Main" type="Node2D"]
 position = Vector2( 55.713, 98.5436 )
 script = ExtResource( 3 )
@@ -103,6 +209,9 @@ __meta__ = {
 
 [node name="Personagem" parent="." instance=ExtResource( 1 )]
 position = Vector2( 17.8265, -71.9376 )
+
+[node name="Spawn" type="Position2D" parent="."]
+position = Vector2( 20.2394, -78.5763 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -117,6 +226,18 @@ __meta__ = {
 position = Vector2( 20.2885, -78.4689 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
+
+[node name="Esquerda" type="StaticBody2D" parent="Tubo"]
+
+[node name="Shape" type="CollisionShape2D" parent="Tubo/Esquerda"]
+position = Vector2( -80.1809, 0 )
+shape = SubResource( 3 )
+
+[node name="Direita" type="StaticBody2D" parent="Tubo"]
+
+[node name="Shape" type="CollisionShape2D" parent="Tubo/Direita"]
+position = Vector2( 81.2945, 0 )
+shape = SubResource( 4 )
 
 [node name="Espinhos" type="Node2D" parent="."]
 
@@ -239,10 +360,10 @@ texture = ExtResource( 6 )
 [node name="Shape" type="CollisionShape2D" parent="Barreira"]
 position = Vector2( 635.795, 239.996 )
 scale = Vector2( 1, 1.23071 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="Anim" type="AnimationPlayer" parent="Barreira"]
-anims/Open = SubResource( 4 )
+anims/Open = SubResource( 6 )
 
 [node name="Botao" type="Area2D" parent="."]
 
@@ -258,7 +379,7 @@ polygon = PoolVector2Array( 286.854, -0.301582, 286.891, -7.06766, 288.625, -8.0
 
 [node name="Shape" type="CollisionShape2D" parent="Pass"]
 position = Vector2( 718.312, 241.59 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="Painel" type="Control" parent="."]
 margin_right = 40.0
@@ -273,7 +394,7 @@ margin_left = -56.0
 margin_top = 288.0
 margin_right = 729.0
 margin_bottom = 386.0
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -283,7 +404,7 @@ margin_left = -51.0
 margin_top = 296.0
 margin_right = 4.0
 margin_bottom = 316.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Level 1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -294,7 +415,7 @@ margin_left = 22.7551
 margin_top = 300.316
 margin_right = 70.7551
 margin_bottom = 343.316
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.670588, 0.662745, 0.662745, 1 )
 text = "Stage
 "
@@ -307,19 +428,18 @@ margin_left = 73.052
 margin_top = 300.316
 margin_right = 121.052
 margin_bottom = 343.316
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.670588, 0.662745, 0.662745, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Painel"]
+[node name="Description" type="Label" parent="Painel"]
 margin_left = -51.026
 margin_top = 322.098
 margin_right = 7.97401
 margin_bottom = 336.098
-custom_fonts/font = SubResource( 9 )
-text = "\"Normal\""
+custom_fonts/font = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -336,35 +456,112 @@ texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="Fim/Tubo2/Cima"]
 position = Vector2( -88.9819, -15.7488 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 
 [node name="Baixo" type="StaticBody2D" parent="Fim/Tubo2"]
 
 [node name="Shape" type="CollisionShape2D" parent="Fim/Tubo2/Baixo"]
 position = Vector2( 89.1829, -15.7485 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 
 [node name="Shape" type="CollisionShape2D" parent="Fim"]
 position = Vector2( 716.431, 241.511 )
-shape = SubResource( 11 )
+shape = SubResource( 13 )
 
 [node name="Start" type="Node2D" parent="."]
 
 [node name="White" type="Panel" parent="Start"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -109.0
-margin_top = -140.0
-margin_right = 780.0
-margin_bottom = 413.0
-custom_styles/panel = SubResource( 12 )
+margin_left = -107.216
+margin_top = -137.771
+margin_right = 781.784
+margin_bottom = 415.229
+custom_styles/panel = SubResource( 14 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Anim" type="AnimationPlayer" parent="Start"]
 autoplay = "Start"
-anims/Start = SubResource( 13 )
+anims/Leave = SubResource( 15 )
+anims/Start = SubResource( 16 )
+
+[node name="Buttons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="TextureButton" parent="Buttons"]
+margin_left = -51.0
+margin_top = 347.0
+margin_right = 374.0
+margin_bottom = 447.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panic" type="TextureButton" parent="Buttons"]
+margin_left = 90.8267
+margin_top = 347.0
+margin_right = 515.827
+margin_bottom = 447.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 12 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PassStage" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Faixa" type="Panel" parent="PassStage"]
+margin_left = 740.608
+margin_top = 37.5017
+margin_right = 1485.6
+margin_bottom = 183.502
+rect_rotation = 360.0
+custom_styles/panel = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Complete" type="TextureRect" parent="PassStage"]
+margin_left = 888.397
+margin_top = 17.5491
+margin_right = 1322.4
+margin_bottom = 126.549
+texture = ExtResource( 15 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Over" type="TextureRect" parent="PassStage"]
+margin_left = 922.081
+margin_top = 131.835
+margin_right = 1358.08
+margin_bottom = 240.836
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anim" type="AnimationPlayer" parent="PassStage"]
+anims/Stage = SubResource( 18 )
 [connection signal="finished" from="." to="Personagem" method="_on_Main_finished"]
+[connection signal="inverted_commands" from="." to="Personagem" method="_on_Main_inverted_commands"]
+[connection signal="new_stage" from="." to="Personagem" method="_on_Main_new_stage"]
 [connection signal="body_entered" from="Espinhos/Espinho" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho2" to="." method="_on_Espinho_body_entered"]
 [connection signal="body_entered" from="Espinhos/Espinho3" to="." method="_on_Espinho_body_entered"]
@@ -396,3 +593,7 @@ anims/Start = SubResource( 13 )
 [connection signal="body_entered" from="Botao" to="." method="_on_Botao_body_entered"]
 [connection signal="body_exited" from="Botao" to="." method="_on_Botao_body_exited"]
 [connection signal="body_entered" from="Fim" to="." method="_on_Fim_body_entered"]
+[connection signal="body_exited" from="Fim" to="." method="_on_Fim_body_exited"]
+[connection signal="pressed" from="Buttons/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="Buttons/Panic" to="." method="_on_Panic_pressed"]
+[connection signal="animation_finished" from="PassStage/Anim" to="." method="_on_Anim_animation_finished"]
