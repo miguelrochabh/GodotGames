@@ -3,7 +3,7 @@ extends KinematicBody2D
 const WALK_FORCE = 600
 const WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
-const JUMP_SPEED = 300
+const JUMP_SPEED = 500
 
 var velocity = Vector2()
 var finished = false
@@ -50,5 +50,4 @@ func _on_Main_inverted_commands():
 	flipped = true
 
 func _on_Main_only_right():
-	flipped = false
 	only_right = true
