@@ -63,4 +63,3 @@ func only_right_commands():
 	up = "jump"
 	left = "move_left"
 	right = "move_right"
-	walk = WALK_FORCE * (Input.get_action_strength(right) + Input.get_action_strength(left))
