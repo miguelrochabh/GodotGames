@@ -24,6 +24,8 @@ signal only_right
 
 func _ready():
 	stage = 0
+	flipped = false
+	only_right = false
 	stagelabel.set_text("Stage")
 	description.set_text("Normal")
 	stagenumber.text = (str(stagenumber))
@@ -117,5 +119,6 @@ func flip_commands():
 #Função para o estágio 3
 func only_right():
 	flipped = false
-	stage_text = "Left Arrow Is Broken"
+	stage_text = "Left Arrow Is Not Working As Intended"
 	emit_signal("only_right")
+	print("right")

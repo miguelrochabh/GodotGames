@@ -11,23 +11,22 @@ var new_stage = false
 var flipped = false
 var only_right = false
 
+var walk
+
 var right = "move_right"
 var left = "move_left"
 var up = "jump"
 
-var walk
-
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-	if flipped and not only_right:
-		up = "jump"
-		left = "move_right"
-		right = "move_left"
-
+	
 	if finished or new_stage: return
 	
-	if only_right: walk = WALK_FORCE * (Input.get_action_strength(right) + Input.get_action_strength(left))
+	if flipped: for i in range(1): invert_commands()
+	
+	if only_right: only_right_commands()
+	
 	walk = WALK_FORCE * (Input.get_action_strength(right) - Input.get_action_strength(left))
 	if abs(walk) < WALK_FORCE * 0.2:
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
@@ -51,3 +50,17 @@ func _on_Main_inverted_commands():
 
 func _on_Main_only_right():
 	only_right = true
+	flipped = false
+
+func invert_commands():
+	if flipped:
+			up = "jump"
+			left = "move_right"
+			right = "move_left"
+
+func only_right_commands():
+	flipped = false
+	up = "jump"
+	left = "move_left"
+	right = "move_right"
+	walk = WALK_FORCE * (Input.get_action_strength(right) + Input.get_action_strength(left))

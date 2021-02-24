@@ -50,6 +50,7 @@ extents = Vector2( 10, 95.895 )
 extents = Vector2( 5.2738, 26.0081 )
 
 [sub_resource type="Animation" id=6]
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -57,7 +58,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 575.35 ) ]
@@ -80,7 +81,7 @@ font_data = ExtResource( 9 )
 font_data = ExtResource( 10 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 4.78003, 83.77 )
+extents = Vector2( 4.78003, 99.3081 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 2.04321, 15.9069 )
@@ -278,7 +279,7 @@ position = Vector2( 446.159, 224.004 )
 rotation = -1.57079
 
 [node name="Espinho21" parent="Espinhos" instance=ExtResource( 5 )]
-position = Vector2( 431.287, 224.004 )
+position = Vector2( 428.112, 225.591 )
 rotation = -1.57079
 
 [node name="Espinho8" parent="Espinhos" instance=ExtResource( 5 )]
@@ -455,13 +456,13 @@ texture = ExtResource( 2 )
 [node name="Cima" type="StaticBody2D" parent="Fim/Tubo2"]
 
 [node name="Shape" type="CollisionShape2D" parent="Fim/Tubo2/Cima"]
-position = Vector2( -88.9819, -15.7488 )
+position = Vector2( -88.982, -0.297394 )
 shape = SubResource( 12 )
 
 [node name="Baixo" type="StaticBody2D" parent="Fim/Tubo2"]
 
 [node name="Shape" type="CollisionShape2D" parent="Fim/Tubo2/Baixo"]
-position = Vector2( 89.1829, -15.7485 )
+position = Vector2( 89.1828, -0.474823 )
 shape = SubResource( 12 )
 
 [node name="Shape" type="CollisionShape2D" parent="Fim"]
