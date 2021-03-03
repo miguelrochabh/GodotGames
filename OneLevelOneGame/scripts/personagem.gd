@@ -10,6 +10,7 @@ var finished = false
 var new_stage = false
 var flipped = false
 var only_right = false
+var follow_mouse = false
 
 var walk
 
@@ -21,11 +22,13 @@ onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	
-	if finished or new_stage: return
+	if finished or new_stage or follow_mouse: return
 	
 	if flipped: for i in range(1): invert_commands()
 	
-	if only_right: only_right_commands()
+	if only_right: for i in range(1): only_right_commands()
+	
+	if follow_mouse: for i in range(1): mouse_follower()
 	
 	walk = WALK_FORCE * (Input.get_action_strength(right) - Input.get_action_strength(left))
 	if abs(walk) < WALK_FORCE * 0.2:
@@ -52,6 +55,9 @@ func _on_Main_only_right():
 	only_right = true
 	flipped = false
 
+func _on_Main_cursor_follower():
+	follow_mouse = true
+
 func invert_commands():
 	if flipped:
 			up = "jump"
@@ -60,6 +66,13 @@ func invert_commands():
 
 func only_right_commands():
 	flipped = false
-	up = "jump"
+	if only_right:
+		up = "space"
+		left = "a_left"
+		right = "d_right"
+
+func mouse_follower():
+	follow_mouse = true
+	up = "space"
 	left = "move_left"
 	right = "move_right"

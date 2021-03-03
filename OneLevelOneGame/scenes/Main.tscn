@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tubo.png" type="Texture" id=2]
@@ -10,7 +10,9 @@
 [ext_resource path="res://assets/Painel/menu.png" type="Texture" id=8]
 [ext_resource path="res://fonts/RussoOne-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://fonts/DroidSansMono.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/Painel/panic-hovered.png" type="Texture" id=11]
 [ext_resource path="res://assets/Painel/panic.png" type="Texture" id=12]
+[ext_resource path="res://assets/Painel/menu-hovered.png" type="Texture" id=13]
 [ext_resource path="res://assets/StagePass/level-over.png" type="Texture" id=14]
 [ext_resource path="res://assets/StagePass/stage-complete.png" type="Texture" id=15]
 
@@ -502,6 +504,9 @@ margin_right = 374.0
 margin_bottom = 447.0
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
+texture_disabled = ExtResource( 13 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -514,6 +519,9 @@ margin_right = 515.827
 margin_bottom = 447.0
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
+texture_disabled = ExtResource( 11 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -560,6 +568,7 @@ __meta__ = {
 
 [node name="Anim" type="AnimationPlayer" parent="PassStage"]
 anims/Stage = SubResource( 18 )
+[connection signal="cursor_follower" from="." to="Personagem" method="_on_Main_cursor_follower"]
 [connection signal="finished" from="." to="Personagem" method="_on_Main_finished"]
 [connection signal="inverted_commands" from="." to="Personagem" method="_on_Main_inverted_commands"]
 [connection signal="new_stage" from="." to="Personagem" method="_on_Main_new_stage"]

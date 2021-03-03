@@ -16,11 +16,13 @@ signal finished
 #Variáveis para os estágios
 var flipped = false
 var only_right = false
+var mouse_follower = false
 
 #Sinais para os estágios
 signal new_stage
 signal inverted_commands
 signal only_right
+signal cursor_follower
 
 func _ready():
 	stage = 0
@@ -47,6 +49,13 @@ func _physics_process(delta):
 		only_right = true
 		flipped = false
 		only_right()
+
+	if stage == 3:
+		only_right = false
+		mouse_follower = true
+		get_node("Personagem/Shape").set_position(get_global_mouse_position())
+		get_node("Personagem/Sprite").set_position(get_global_mouse_position())
+		follow_mouse()
 
 #Morrer ao tocar no espinho
 func _on_Espinho_body_entered(body):
@@ -119,6 +128,9 @@ func flip_commands():
 #Função para o estágio 3
 func only_right():
 	flipped = false
-	stage_text = "Left Arrow Is Not Working As Intended"
+	stage_text = "Maybe A, D and Space?"
 	emit_signal("only_right")
-	print("right")
+
+func follow_mouse():
+	stage_text = "Move Your Cursor Over Here!"
+	emit_signal("cursor_follower")
