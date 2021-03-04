@@ -10,4 +10,4 @@ PrimeiroJogoGodot/Felpudo-Fly/assets/font160.inc linguist-language=GDScript
 TimberFelpudo/engine.cfg linguist-language=GDScript
 TimberFelpudo/assets/font140.inc linguist-language=GDScript
 TimberFelpudo/assets/engine.cfg linguist-language=GDScript
-. filter=lfs diff=lfs merge=lfs -text
+Godot_v3.2.3-stable_export_templates.tpz filter=lfs diff=lfs merge=lfs -text
