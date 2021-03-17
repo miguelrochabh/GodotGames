@@ -23,6 +23,7 @@ signal new_stage
 signal inverted_commands
 signal only_right
 signal cursor_follower
+signal inverted
 
 func _ready():
 	stage = 0
@@ -36,6 +37,10 @@ func _ready():
 #Indicando a mudanca em determinados estágios
 func _physics_process(delta):
 	updatedescription(description)
+	
+	if Input.is_action_just_pressed("Console"):
+		get_parent().add_child(load("res://scenes/Console.tscn").instance())
+		get_tree().paused = true
 	
 	if stage == 0:
 		stage_text = "Normal"
@@ -53,9 +58,12 @@ func _physics_process(delta):
 	if stage == 3:
 		only_right = false
 		mouse_follower = true
-		get_node("Personagem/Shape").set_position(get_global_mouse_position())
-		get_node("Personagem/Sprite").set_position(get_global_mouse_position())
+		get_node("Personagem").set_position(get_local_mouse_position())
 		follow_mouse()
+
+	if stage == 4:
+		mouse_follower = false
+		
 
 #Morrer ao tocar no espinho
 func _on_Espinho_body_entered(body):
@@ -134,3 +142,7 @@ func only_right():
 func follow_mouse():
 	stage_text = "Move Your Cursor Over Here!"
 	emit_signal("cursor_follower")
+
+func inverted():
+	stage_text = "Upsidedown"
+	emit_signal("inverted")

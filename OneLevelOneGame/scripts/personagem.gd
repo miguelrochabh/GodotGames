@@ -76,3 +76,10 @@ func mouse_follower():
 	up = "space"
 	left = "move_left"
 	right = "move_right"
+
+
+func _on_Main_cursor_unfollower():
+	follow_mouse = false
+	up = "space"
+	left = "move_left"
+	right = "move_right"
