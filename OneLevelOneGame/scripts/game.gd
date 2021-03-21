@@ -6,11 +6,12 @@ onready var stagelabel = get_node("Painel/Stage")
 onready var stagenumber = get_node("Painel/StageNumber")
 onready var description = get_node("Painel/Description")
 onready var spawn = get_node("Spawn")
+onready var fps_label = get_node("FPS")
 var opened = false
 var entered = false
 var barrier_opened = false
 var stage_text = ""
-var stage = 0
+var stage = int(0)
 signal finished
 
 #Variáveis para os estágios
@@ -36,6 +37,7 @@ func _ready():
 
 #Indicando a mudanca em determinados estágios
 func _physics_process(delta):
+	fps_label.set_text(str("FPS:", Engine.get_frames_per_second()))
 	updatedescription(description)
 	
 	if Input.is_action_just_pressed("Console"):

@@ -1,16 +1,23 @@
 extends Node
 
+onready var game = get_parent().get_parent().get_node("Main")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+enum {
+	ARG_INT,
+	ARG_STRING,
+	ARG_BOOL,
+	ARG_FLOAT
+}
 
+const valid_commands = [
+	["set_stage",
+		[ARG_INT] ]
+]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func set_stage(stage):
+	game.stage = str(stage)
+	
+	if int(stage) >= 1 and int(stage) <= 20:
+		game.stage = stage
+		return str("Sucessfuly set stage to ", stage)
+	return "Stage value must be between 1 and 20"

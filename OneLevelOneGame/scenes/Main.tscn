@@ -210,6 +210,17 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
+[node name="FPS" type="Label" parent="."]
+margin_left = -45.6649
+margin_top = -94.3079
+margin_right = -15.6649
+margin_bottom = -80.3079
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "FPS: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Personagem" parent="." instance=ExtResource( 1 )]
 position = Vector2( 17.8265, -71.9376 )
 
